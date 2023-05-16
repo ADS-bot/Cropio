@@ -32,7 +32,7 @@
                             <a href="#about" class="nav__link">About</a>
                         </li>
                         <li class="nav__item">
-                            <a href="#products" class="nav__link">Products</a>
+                            <a href="#rotations" class="nav__link">Rotations</a>
                         </li>
                         <li class="nav__item">
                             <a href="#faqs" class="nav__link">FAQs</a>
@@ -174,97 +174,192 @@
                 </div>
             </section>
 
-            <!--==================== PRODUCTS ====================-->
-            <section class="product section container" id="products">
+            <!--==================== rotationS ====================-->
+            <section class="rotation section container" id="rotations">
                 <h2 class="section__title-center">
-                    Check out our <br> products
+                    Know about the Next Crop
                 </h2>
+                <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+  $(document).ready(function() {
+    $('.form-group select').fadeIn(1000);
+  });
+</script>
 
-                <p class="product__description">
-                    Here are some selected plants from our showroom, all are in excellent 
-                    shape and has a long life span. Buy and enjoy best quality.
-                </p>
+<form>
+  <div class="form-group">
+    <label for="current-crop">Current Crop</label>
+    <select required name="current-crop" id="current-crop">
+      <option value="" disabled selected>Select your option</option>
+      <option value="corn">Corn</option>
+      <option value="wheat">Wheat</option>
+      <option value="soybeans">Soybeans</option>
+    </select>
+  </div>
+  <div class="form-group" for="soil-type">
+    <label for="soil-type">Soil Type</label>
+    <select required name="soil-type" id="soil-type">
+      <option required value="" disabled selected>Select your option</option>
+      <option value="sandy">Sandy</option>
+      <option value="alluvium">Alluvium</option>
+      <option value="laterite">Laterite</option>
+    </select>
+  </div>
+  <div class="form-group" for="soil-type">
+    <label for="season">Season</label>
+    <select required name="season" id="season">
+      <option value="" disabled selected>Select your option</option>
+      <option value="spring">Spring</option>
+      <option value="summer">Summer</option>
+      <option value="fall">Fall</option>
+    </select>
+  </div>
+</form>
+<style>
+    .form-group select {
+        transition: all 0.5s ease-in-out;
+      }
+      
+      .form-group select:hover {
+        transform: scale(1.1);
+      }
+      
+      .form-group select:hover::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 0 0 10px 10px;
+        border-color: transparent transparent blue blue;
+        border-radius: 50%;
+        animation: 1s opacity-change linear infinite;
+      }
+      
+      @keyframes opacity-change {
+        0% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+      
+      .form-group.active select {
+        transform: scale(1);
+      }
+      
+      .form-group.active select::after {
+        animation: none;
+      }
+      
+      .form-group.active ~ .form-group select {
+        display: none;
+      }  
+      .form-group select {
+        opacity: 1;
+      }    
+      .form-group select {
+  transition: all 0.5s ease-in-out;
+}
 
-                <div class="product__container grid">
-                    <article class="product__card">
-                        <div class="product__circle"></div>
+.form-group select:hover {
+  transform: scale(1.1);
+}
 
-                        <img src="assets/img/product1.png" alt="" class="product__img">
+.form-group select:hover::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 0 10px 10px;
+  border-color: transparent transparent blue blue;
+  border-radius: 50%;
+  animation: 1s opacity-change linear infinite;
+}
 
-                        <h3 class="product__title">Cacti Plant</h3>
-                        <span class="product__price">$19.99</span>
+@keyframes opacity-change {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 
-                        <button class="button--flex product__button">
-                            <i class="ri-shopping-bag-line"></i>
-                        </button>
-                    </article>
+.form-group.active select {
+  transform: scale(1);
+}
 
-                    <article class="product__card">
-                        <div class="product__circle"></div>
+.form-group.active select::after {
+  animation: none;
+}
 
-                        <img src="assets/img/product2.png" alt="" class="product__img">
+.form-group.active ~ .form-group select {
+  display: none;
+}
 
-                        <h3 class="product__title">Cactus Plant</h3>
-                        <span class="product__price">$11.99</span>
+.form-group.current-crop.active ~ .form-group.soil-type {
+  transform: translate(0, 50px);
+}
 
-                        <button class="button--flex product__button">
-                            <i class="ri-shopping-bag-line"></i>
-                        </button>
-                    </article>
+.form-group.current-crop.active ~ .form-group.soil-type ~ .form-group.season {
+  transform: translate(0, 100px);
+}
 
-                    <article class="product__card">
-                        <div class="product__circle"></div>
+.form-group.current-crop.active ~ .form-group.soil-type ~ .form-group.season select {
+  display: block;
+}
 
-                        <img src="assets/img/product3.png" alt="" class="product__img">
+.form-group.current-crop.active ~ .form-group.soil-type ~ .form-group.season select:hover {
+  transform: scale(1.1);
+}
 
-                        <h3 class="product__title">Aloe Vera Plant</h3>
-                        <span class="product__price">$7.99</span>
+.form-group.current-crop.active ~ .form-group.soil-type ~ .form-group.season select:hover::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 0 10px 10px;
+  border-color: transparent transparent blue blue;
+  border-radius: 50%;
+  animation: 1s opacity-change linear infinite;
+}
 
-                        <button class="button--flex product__button">
-                            <i class="ri-shopping-bag-line"></i>
-                        </button>
-                    </article>
+@keyframes opacity-change {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 
-                    <article class="product__card">
-                        <div class="product__circle"></div>
+.form-group.current-crop.active ~ .form-group.soil-type ~ .form-group.season.active select {
+  transform: scale(1);
+}
 
-                        <img src="assets/img/product4.png" alt="" class="product__img">
-
-                        <h3 class="product__title">Succulent Plant</h3>
-                        <span class="product__price">$5.99</span>
-
-                        <button class="button--flex product__button">
-                            <i class="ri-shopping-bag-line"></i>
-                        </button>
-                    </article>
-
-                    <article class="product__card">
-                        <div class="product__circle"></div>
-
-                        <img src="assets/img/product5.png" alt="" class="product__img">
-
-                        <h3 class="product__title">Succulent Plant</h3>
-                        <span class="product__price">$10.99</span>
-
-                        <button class="button--flex product__button">
-                            <i class="ri-shopping-bag-line"></i>
-                        </button>
-                    </article>
-
-                    <article class="product__card">
-                        <div class="product__circle"></div>
-
-                        <img src="assets/img/product6.png" alt="" class="product__img">
-
-                        <h3 class="product__title">Green Plant</h3>
-                        <span class="product__price">$8.99</span>
-
-                        <button class="button--flex product__button">
-                            <i class="ri-shopping-bag-line"></i>
-                        </button>
-                    </article>
-                </div>
-            </section>
+.form-group.current-crop.active ~ .form-group.soil-type ~ .form-group.season.active select::after {
+  animation: none;
+}
+</style>
+  
+                <button class="button button--flex footer__button">
+                    Get Recommendations
+                    <i class="ri-arrow-right-up-line button__icon"></i>
+                </button>
+                </section><br><br>
 
             <!--==================== QUESTIONS ====================-->
             <section class="questions section" id="faqs">
@@ -377,10 +472,10 @@
 
             <!--==================== Login ====================-->
             <section class="login section" id="login">
-                <h2 class="section__title-center questions__title container">
+                <h2 class="section__title-center">
                     Enhance Your Experience:<br> Log in or Sign Up and Track Your Search Activity
                 </h2>
-            <div class="login">
+            <div class="login1">
                 <div class="login__content">
                     <div class="login__img">
                         <img src="login.svg" alt="">
@@ -446,7 +541,7 @@
 
                         <div class="contact__data">
                             <div class="contact__information">
-                                <h3 class="contact__subtitle">Call us for instant support</h3>
+                                <h3 class="contact__subtitle"><br>Call us for instant support</h3>
                                 <span class="contact__description">
                                     <i class="ri-phone-line contact__icon"></i>
                                     +919953733780
