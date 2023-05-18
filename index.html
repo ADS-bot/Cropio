@@ -179,187 +179,214 @@
                 <h2 class="section__title-center">
                     Know about the Next Crop
                 </h2><br>
+                <div class="container">
+                    <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
+                        <div class="login-button-container clearfix">
+                            <div class="col-xs-6 sign-in">
+                                <button class="btn sign-in__button" onclick="showPersonalForm()">
+                                    Commercial
+                                </button>
+                            </div>
+                            <div class="col-xs-6 register">
+                                <button class="btn register__button" onclick="showCommercialForm()">
+                                    Personal
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script>
-  $(document).ready(function() {
-    $('.form-group select').fadeIn(1000);
-  });
-</script>
-
-<form>
-  <div class="form-group">
-    <label for="current-crop">Current Crop</label>
-    <select required name="current-crop" id="current-crop">
-      <option value="" disabled selected>Select your option</option>
-      <option value="corn">Corn</option>
-      <option value="wheat">Wheat</option>
-      <option value="soybeans">Soybeans</option>
-    </select>
-  </div>
-  <div class="form-group" for="soil-type">
-    <label for="soil-type">Soil Type</label>
-    <select required name="soil-type" id="soil-type">
-      <option required value="" disabled selected>Select your option</option>
-      <option value="sandy">Sandy</option>
-      <option value="alluvium">Alluvium</option>
-      <option value="laterite">Laterite</option>
-    </select>
-  </div>
-  <div class="form-group" for="soil-type">
-    <label for="season">Season</label>
-    <select required name="season" id="season">
-      <option value="" disabled selected>Select your option</option>
-      <option value="spring">Spring</option>
-      <option value="summer">Summer</option>
-      <option value="fall">Fall</option>
-    </select>
-  </div>
-</form>
-<style>
-    .form-group select {
-        transition: all 0.5s ease-in-out;
-      }
-      
-      .form-group select:hover {
-        transform: scale(1.1);
-      }
-      
-      .form-group select:hover::after {
-        content: "";
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 0;
-        height: 0;
-        border-style: solid;
-        border-width: 0 0 10px 10px;
-        border-color: transparent transparent blue blue;
-        border-radius: 50%;
-        animation: 1s opacity-change linear infinite;
-      }
-      
-      @keyframes opacity-change {
-        0% {
-          opacity: 0;
-        }
-        100% {
-          opacity: 1;
-        }
-      }
-      
-      .form-group.active select {
-        transform: scale(1);
-      }
-      
-      .form-group.active select::after {
-        animation: none;
-      }
-      
-      .form-group.active ~ .form-group select {
-        display: none;
-      }  
-      .form-group select {
-        opacity: 1;
-      }    
-      .form-group select {
-  transition: all 0.5s ease-in-out;
-}
-
-.form-group select:hover {
-  transform: scale(1.1);
-}
-
-.form-group select:hover::after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 0;
-  height: 0;
-  border-style: solid;
-  border-width: 0 0 10px 10px;
-  border-color: transparent transparent blue blue;
-  border-radius: 50%;
-  animation: 1s opacity-change linear infinite;
-}
-
-@keyframes opacity-change {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-.form-group.active select {
-  transform: scale(1);
-}
-
-.form-group.active select::after {
-  animation: none;
-}
-
-.form-group.active ~ .form-group select {
-  display: none;
-}
-
-.form-group.current-crop.active ~ .form-group.soil-type {
-  transform: translate(0, 50px);
-}
-
-.form-group.current-crop.active ~ .form-group.soil-type ~ .form-group.season {
-  transform: translate(0, 100px);
-}
-
-.form-group.current-crop.active ~ .form-group.soil-type ~ .form-group.season select {
-  display: block;
-}
-
-.form-group.current-crop.active ~ .form-group.soil-type ~ .form-group.season select:hover {
-  transform: scale(1.1);
-}
-
-.form-group.current-crop.active ~ .form-group.soil-type ~ .form-group.season select:hover::after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 0;
-  height: 0;
-  border-style: solid;
-  border-width: 0 0 10px 10px;
-  border-color: transparent transparent blue blue;
-  border-radius: 50%;
-  animation: 1s opacity-change linear infinite;
-}
-
-@keyframes opacity-change {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-.form-group.current-crop.active ~ .form-group.soil-type ~ .form-group.season.active select {
-  transform: scale(1);
-}
-
-.form-group.current-crop.active ~ .form-group.soil-type ~ .form-group.season.active select::after {
-  animation: none;
-}
-</style>
-  
-                <button class="button button--flex footer__button">
-                    Get Recommendations
-                    <i class="ri-arrow-right-up-line button__icon"></i>
-                </button>
-                </section><br><br>
+                <script>
+                    function showPersonalForm() {
+                        $('#commercial-form').hide();
+                        $('#personal-form').fadeIn(1000);
+                    }
+                    
+                    function showCommercialForm() {
+                        $('#personal-form').hide();
+                        $('#commercial-form').fadeIn(1000);
+                    }
+                    
+                    $(document).ready(function() {
+                        $('.form-group select').fadeIn(1000);
+                    });
+                </script>
+            
+                <form id="commercial-form" style="display: none;">
+                    <div class="form-group">
+                        <label for="Plant">Plant</label>
+                        <select required name="Plant" id="Plant" onchange="showSubOptions()">
+                            <option value="" disabled selected>Select your option</option>
+                            <option value="Flora">Flora</option>
+                            <option value="Fauna">Fauna</option>
+                        </select>
+                    </div>
+                
+                    <div id="flora-options" style="display: none;">
+                        <div class="form-group">
+                            <label for="Flowers">Flowers</label>
+                            <select required name="Flowers" id="Flowers">
+                                <option value="" disabled selected>Select your option</option>
+                                <option value="Rose">Rose</option>
+                                <option value="Lily">Lily</option>
+                                <option value="Sunflower">Sunflower</option>
+                            </select>
+                        </div>
+                    </div>
+                
+                    <div id="fauna-options" style="display: none;">
+                        <div class="form-group">
+                            <label for="HerbsVegetables">Herbs/Vegetables</label>
+                            <select required name="HerbsVegetables" id="HerbsVegetables">
+                                <option value="" disabled selected>Select your option</option>
+                                <option value="Basil">Basil</option>
+                                <option value="Tomato">Tomato</option>
+                                <option value="Carrot">Carrot</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button class="button button--flex footer__button">
+                        Get Recommendations
+                        <i class="ri-arrow-right-up-line button__icon"></i>
+                    </button>
+                </form>
+                <script>
+                    function showSubOptions() {
+                        var plantSelect = document.getElementById("Plant");
+                        var floraOptions = document.getElementById("flora-options");
+                        var faunaOptions = document.getElementById("fauna-options");
+                    
+                        if (plantSelect.value === "Flora") {
+                            floraOptions.style.display = "block";
+                            faunaOptions.style.display = "none";
+                        } else if (plantSelect.value === "Fauna") {
+                            floraOptions.style.display = "none";
+                            faunaOptions.style.display = "block";
+                        } else {
+                            floraOptions.style.display = "none";
+                            faunaOptions.style.display = "none";
+                        }
+                    }              
+                </script>
+            
+                <form id="personal-form" style="display: none;">
+                    <div class="form-group">
+                        <label for="current-crop">Current Crop</label>
+                        <select required name="current-crop" id="current-crop">
+                            <option value="" disabled selected>Select your option</option>
+                            <option value="corn">Corn</option>
+                            <option value="wheat">Wheat</option>
+                            <option value="soybeans">Soybeans</option>
+                        </select>
+                    </div>
+                    <div class="form-group" for="soil-type">
+                        <label for="soil-type">Soil Type</label>
+                        <select required name="soil-type" id="soil-type">
+                            <option required value="" disabled selected>Select your option</option>
+                            <option value="sandy">Sandy</option>
+                            <option value="alluvium">Alluvium</option>
+                            <option value="laterite">Laterite</option>
+                        </select>
+                    </div>
+                    <div class="form-group" for="soil-type">
+                        <label for="season">Season</label>
+                        <select required name="season" id="season">
+                            <option value="" disabled selected>Select your option</option>
+                            <option value="spring">Spring</option>
+                            <option value="summer">Summer</option>
+                            <option value="fall">Fall</option>
+                        </select>
+                    </div>
+                    <button class="button button--flex footer__button">
+                        Get Recommendations
+                        <i class="ri-arrow-right-up-line button__icon"></i>
+                    </button>
+                </form>
+                <style>
+                    .form-group select {
+                        transition: all 0.5s ease-in-out;
+                    }
+                
+                    .form-group select:hover {
+                        transform: scale(1.1);
+                    }
+                
+                    .form-group select:hover::after {
+                        content: "";
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                        width: 0;
+                        height: 0;
+                        border-style: solid;
+                        border-width: 0 0 10px 10px;
+                        border-color: transparent transparent blue blue;
+                        border-radius: 50%;
+                        animation: opacity-change 1s linear infinite;
+                    }
+                
+                    @keyframes opacity-change {
+                        0% {
+                            opacity: 0;
+                        }
+                        100% {
+                            opacity: 1;
+                        }
+                    }
+                
+                    .form-group.active select {
+                        transform: scale(1);
+                    }
+                
+                    .form-group.active select::after {
+                        animation: none;
+                    }
+                
+                    .form-group.active ~ .form-group select {
+                        display: none;
+                    }
+                
+                    .form-group.current-crop.active ~ .form-group.soil-type {
+                        transform: translate(0, 50px);
+                    }
+                
+                    .form-group.current-crop.active ~ .form-group.soil-type ~ .form-group.season {
+                        transform: translate(0, 100px);
+                    }
+                
+                    .form-group.current-crop.active ~ .form-group.soil-type ~ .form-group.season select {
+                        display: block;
+                    }
+                
+                    .form-group.current-crop.active ~ .form-group.soil-type ~ .form-group.season select:hover {
+                        transform: scale(1.1);
+                    }
+                
+                    .form-group.current-crop.active ~ .form-group.soil-type ~ .form-group.season select:hover::after {
+                        content: "";
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                        width: 0;
+                        height: 0;
+                        border-style: solid;
+                        border-width: 0 0 10px 10px;
+                        border-color: transparent transparent blue blue;
+                        border-radius: 50%;
+                        animation: opacity-change 1s linear infinite;
+                    }
+                
+                    .form-group.current-crop.active ~ .form-group.soil-type ~ .form-group.season.active select {
+                        transform: scale(1);
+                    }
+                
+                    .form-group.current-crop.active ~ .form-group.soil-type ~ .form-group.season.active select::after {
+                        animation: none;
+                    }
+                </style>
+</section><br><br>
 
             <!--==================== QUESTIONS ====================-->
             <section class="questions section" id="faqs">
