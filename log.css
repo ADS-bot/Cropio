@@ -237,7 +237,7 @@ the website, in dark theme
     background-color: var(--body-color);
     position: fixed;
     top: 0;
-    left: 300px;
+    left: 200px;
     z-index: var(--z-fixed);
     transition: .4s; /*For animation dark mode*/
   }
