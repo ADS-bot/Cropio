@@ -24,6 +24,93 @@
            background-repeat: no-repeat;
            background-attachment: fixed;     
             }
+            /* Adjustments for smaller screens */
+            @media screen and (min-width: 768px){
+                :root{
+                  --normal-font-size: 1rem;
+                  --small-font-size: .875rem;
+                }
+            }
+                @media screen and (max-width: 767px) {
+                    .header {
+                      position: fixed;
+                      left: 0;
+                      transition: .4s; /* For animation dark mode */
+                    }
+                    #noThanksButton {
+                        position: fixed;
+                        top: 1rem;
+                        right: auto;
+                        bottom: auto;
+                        left: 30rem;
+                        transition: .4s;
+                        }
+                      
+            }
+              
+              @media screen and (max-width: 767px){
+                .nav__menu{
+                  position: fixed;
+                  background-color: var(--container-color);
+                  width: 80%;
+                  height: 100%;
+                  top: 0;
+                  right: -100%;
+                  box-shadow: -2px 0 4px hsla(var(--hue), 24%, 15%, .1);
+                  padding: 4rem 0 0 3rem;
+                  border-radius: 1rem 0 0 1rem;
+                  transition: .3s;
+                  z-index: var(--z-fixed);
+                }
+              }
+              
+              @media screen and (min-width: 576px){
+                .login__forms{
+                  width: 348px;
+                  justify-self: center;
+                }
+              }
+              
+              @media screen and (min-width: 1024px){
+                .login{
+                  height: 100vh;
+                  overflow: hidden;
+                }
+              
+                .login__content{
+                  grid-template-columns: repeat(2, max-content);
+                  justify-content: center;
+                  align-items: center;
+                  margin-left: 10rem;
+                }
+              
+                .login__img{
+                  display: flex;
+                  width: 600px;
+                  height: 588px;
+                  background-color: var(--first-color-lighten);
+                  border-radius: 1rem;
+                  padding-left: 1rem;
+                }
+              
+                .login__img img{
+                  width: 390px;
+                  margin-top: 0;
+                }
+              
+                .login__registre, .login__create{
+                  left: -11rem;
+                }
+              
+                .login__registre{
+                  bottom: -2rem;
+                }
+              
+                .login__create{
+                  bottom: -5.5rem;
+                }
+              }
+              
      </style>
      
        <!--==================== HEADER ====================-->
