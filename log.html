@@ -1,121 +1,694 @@
 <!DOCTYPE html>
-   <html lang="en">
-   <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-       <!--=============== FAVICON ===============-->
-       <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
+        <!--=============== FAVICON ===============-->
+        <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
 
-      <!--=============== REMIXICONS ===============-->
-      <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+        <!--=============== REMIX ICONS ===============-->
+        <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
 
-      <!--=============== CSS ===============-->
-      <link rel="stylesheet" href="log.css">
-      <link rel="icon" href="leaf-line.png" type="image/x-icon">
-      <title>Cropio</title>
-   </head>
-   <body>
-       <!--==================== HEADER ====================-->
-       <header class="header" id="header">
-         <nav class="nav container">
-             <a href="#" class="nav__logo">
-                 <i class="ri-leaf-line nav__logo-icon"></i> C r o p i o
-             </a>
-   </nav>
-</header>
-<div class="login">
-   <div class="login__content">
-       <div class="login__img">
-           <img src="login.svg" alt="">
-       </div>
+        <!--=============== CSS ===============-->
+        <link rel="stylesheet" href="styles.css">
+        <link rel="icon" href="leaf-line.png" type="image/x-icon">
+        <title>Cropio</title>
+    </head>
+    <body>
+        <!--==================== HEADER ====================-->
+        <header class="header" id="header">
+            <nav class="nav container">
+                <a href="#" class="nav__logo">
+                    <i class="ri-leaf-line nav__logo-icon"></i> C r o p i o
+                </a>
 
-       <div class="login__forms">
-           <form action="" class="login__registre" id="login-in">
-               <h1 class="login__title">Sign In</h1>
+                <div class="nav__menu" id="nav-menu">
+                    <ul class="nav__list">
+                        <li class="nav__item">
+                            <a href="#home" class="nav__link active-link">Home</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="#about" class="nav__link">About</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="#rotations" class="nav__link">Rotations</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="#faqs" class="nav__link">FAQs</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="#login" class="nav__link">Login</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="#contact" class="nav__link">Contact Us</a>
+                        </li>
+                    </ul>
 
-               <div class="login__box">
-                   <i class='bx bx-user login__icon'></i>
-                   <input type="text" placeholder="Username" class="login__input">
-               </div>
+                    <div class="nav__close" id="nav-close">
+                        <i class="ri-close-line"></i>
+                    </div>
+                </div>
 
-               <div class="login__box">
-                   <i class='bx bx-lock-alt login__icon'></i>
-                   <input type="password" placeholder="Password" class="login__input">
-               </div>
+                <div class="nav__btns">
+                    <!-- Theme change button -->
+                    <i class="ri-moon-line change-theme" id="theme-button"></i>
 
-               <a href="#" class="login__forgot">Forgot password?</a>
+                    <div class="nav__toggle" id="nav-toggle">
+                        <i class="ri-menu-line"></i>
+                    </div>
+                </div>
+            </nav>
+        </header>
 
-               <a href="#" class="login__button">Sign In</a>
+        <main class="main">
+            <!--==================== HOME ====================-->
+            <section class="home" id="home">
+                <div class="home__container container grid">
+                    <img src="assets/img/home.png" alt="" class="home__img">
 
-               <div>
-                   <span class="login__account">Don't have an Account ?</span>
-                   <span class="login__signin" id="sign-up">Sign Up</span>
-               </div>
-           </form>
+                    <div class="home__data">
+                        <h1 class="home__title">
+                            Plants will make <br> your life better
+                        </h1>
+                        <p class="home__description">
+                            Create incredible plant design for your offices or apastaments. 
+                            Add fresness to your new ideas.
+                        </p>
+                        <a href="#about" class="button button--flex">
+                            Explore <i class="ri-arrow-right-down-line button__icon"></i>
+                        </a>
+                    </div>
 
-           <form action="" class="login__create none" id="login-up">
-               <h1 class="login__title">Create Account</h1>
+                    <div class="home__social">
+                        <span class="home__social-follow">Follow Us</span>
 
-               <div class="login__box">
-                   <i class='bx bx-user login__icon'></i>
-                   <input type="text" placeholder="Username" class="login__input">
-               </div>
+                        <div class="home__social-links">
+                            <a href="https://www.facebook.com/" target="_blank" class="home__social-link">
+                                <i class="ri-facebook-fill"></i>
+                            </a>
+                            <a href="https://www.instagram.com/" target="_blank" class="home__social-link">
+                                <i class="ri-instagram-line"></i>
+                            </a>
+                            <a href="https://twitter.com/" target="_blank" class="home__social-link">
+                                <i class="ri-twitter-fill"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
-               <div class="login__box">
-                   <i class='bx bx-at login__icon'></i>
-                   <input type="text" placeholder="Email" class="login__input">
-               </div>
+            <!--==================== ABOUT ====================-->
+            <section class="about section container" id="about">
+                <div class="about__container grid">
+                    <img src="assets/img/about.png" alt="" class="about__img">
 
-               <div class="login__box">
-                   <i class='bx bx-lock-alt login__icon'></i>
-                   <input type="password" placeholder="Password" class="login__input">
-               </div>
+                    <div class="about__data">
+                        <h2 class="section__title about__title">
+                            Who we really are & <br> why choose us
+                        </h2>
 
-               <a href="#" class="login__button">Sign Up</a>
+                        <p class="about__description">
+                            We have over 4000+ unbiased reviews and our customers 
+                            trust our plant process and delivery service every time
+                        </p>
 
-               <div>
-                   <span class="login__account">Already have an Account ?</span>
-                   <span class="login__signup" id="sign-in">Sign In</span>
-               </div>
-           </form>
-       </div>
-   </div>
-</div>
-<button id="noThanksButton"><b>Later On....</b></button>
-<style> 
- #noThanksButton {
-   position: absolute;
-   top: 0;
-   margin-left: 10px;
-   right: 100px;
-   margin: 10px;
-   padding: 10px 20px;
-   border: 1px solid black;
-   border: none; /* Removes the button border */
-  border-radius: 20px; /* Gives the button a curved shape */
-   background-color: #fff;
-   color: #000;
-   cursor: pointer;
-   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
-   transition: background-color 0.3s ease;
- }
- #noThanksButton:hover {
-   transition-delay: 0.7s;
-   background: linear-gradient(to right, #6aa326, #7dbf32);
-}
-</style>
-<script>
-  var noThanksButton = document.getElementById("noThanksButton");
-  noThanksButton.addEventListener("click", function() {
-    window.location.href = "index.html";
-  });
-</script>
+                        <div class="about__details">
+                            <p class="about__details-description">
+                                <i class="ri-checkbox-fill about__details-icon"></i>
+                                We always deliver on time.
+                            </p>
+                            <p class="about__details-description">
+                                <i class="ri-checkbox-fill about__details-icon"></i>
+                                We give you guides to protect and care for your plants.
+                            </p>
+                            <p class="about__details-description">
+                                <i class="ri-checkbox-fill about__details-icon"></i>
+                                We always come over for a check-up after sale.
+                            </p>
+                            <p class="about__details-description">
+                                <i class="ri-checkbox-fill about__details-icon"></i>
+                                100% money back guaranteed.
+                            </p>
+                        </div>
 
-<footer class="footer section">
-   <p class="footer__copy">&#169; Cropio</p>
-</footer>
-      <!--=============== MAIN JS ===============-->
-      <script src="main1.js"></script>
-   </body>
+                        <a href="#" class="button--link button--flex">
+                            Shop Now <i class="ri-arrow-right-down-line button__icon"></i>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!--==================== STEPS ====================-->
+            <section class="steps section container">
+                <div class="steps__bg">
+                    <h2 class="section__title-center steps__title">
+                        Steps to start your <br> plants off right
+                    </h2>
+
+                    <div class="steps__container grid">
+                        <div class="steps__card">
+                            <div class="steps__card-number">01</div>
+                            <h3 class="steps__card-title">Choose Plant</h3>
+                            <p class="steps__card-description">
+                                We have several varieties plants you can choose from.
+                            </p>
+                        </div>
+
+                        <div class="steps__card">
+                            <div class="steps__card-number">02</div>
+                            <h3 class="steps__card-title">Place an order</h3>
+                            <p class="steps__card-description">
+                                Once your order is set, we move to the next step which is the shipping.
+                            </p>
+                        </div>
+
+                        <div class="steps__card">
+                            <div class="steps__card-number">03</div>
+                            <h3 class="steps__card-title">Get plants delivered</h3>
+                            <p class="steps__card-description">
+                                Our delivery process is easy, you receive the plant direct to your door.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!--==================== rotationS ====================-->
+            <section class="rotation section container" id="rotations">
+                <h2 class="section__title-center">
+                    Know about the Next Crop
+                </h2><br>
+                <div class="container">
+                    <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
+                        <div class="login-button-container clearfix">
+                            <div class="col-xs-6 sign-in">
+                                <button class="btn sign-in__button" onclick="showPersonalForm()">
+                                    Commercial
+                                </button>
+                            </div>
+                            <div class="col-xs-6 register">
+                                <button class="btn register__button" onclick="showCommercialForm()">
+                                    Personal
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+                <script>
+                    function showPersonalForm() {
+                        $('#commercial-form').hide();
+                        $('#personal-form').fadeIn(1000);
+                    }
+                    
+                    function showCommercialForm() {
+                        $('#personal-form').hide();
+                        $('#commercial-form').fadeIn(1000);
+                    }
+                    
+                    $(document).ready(function() {
+                        $('.form-group select').fadeIn(1000);
+                    });
+                </script>
+            
+                <form id="commercial-form" style="display: none;">
+                    <div class="form-group">
+                        <label for="Plant">Plant</label>
+                        <select required name="Plant" id="Plant" onchange="showSubOptions()">
+                            <option value="" disabled selected>Select your option</option>
+                            <option value="Flora">Flora</option>
+                            <option value="Fauna">Fauna</option>
+                        </select>
+                    </div>
+                
+                    <div id="flora-options" style="display: none;">
+                        <div class="form-group">
+                            <label for="Flowers">Flowers</label>
+                            <select required name="Flowers" id="Flowers">
+                                <option value="" disabled selected>Select your option</option>
+                                <option value="Rose">Rose</option>
+                                <option value="Lily">Lily</option>
+                                <option value="Sunflower">Sunflower</option>
+                            </select>
+                        </div>
+                    </div>
+                
+                    <div id="fauna-options" style="display: none;">
+                        <div class="form-group">
+                            <label for="HerbsVegetables">Herbs/Vegetables</label>
+                            <select required name="HerbsVegetables" id="HerbsVegetables">
+                                <option value="" disabled selected>Select your option</option>
+                                <option value="Basil">Basil</option>
+                                <option value="Tomato">Tomato</option>
+                                <option value="Carrot">Carrot</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button class="button button--flex footer__button">
+                        Get Recommendations
+                        <i class="ri-arrow-right-up-line button__icon"></i>
+                    </button>
+                </form>
+                <script>
+                    function showSubOptions() {
+                        var plantSelect = document.getElementById("Plant");
+                        var floraOptions = document.getElementById("flora-options");
+                        var faunaOptions = document.getElementById("fauna-options");
+                    
+                        if (plantSelect.value === "Flora") {
+                            floraOptions.style.display = "block";
+                            faunaOptions.style.display = "none";
+                        } else if (plantSelect.value === "Fauna") {
+                            floraOptions.style.display = "none";
+                            faunaOptions.style.display = "block";
+                        } else {
+                            floraOptions.style.display = "none";
+                            faunaOptions.style.display = "none";
+                        }
+                    }              
+                </script>
+            
+                <form id="personal-form" style="display: none;">
+                    <div class="form-group">
+                        <label for="current-crop">Current Crop</label>
+                        <select required name="current-crop" id="current-crop">
+                            <option value="" disabled selected>Select your option</option>
+                            <option value="corn">Corn</option>
+                            <option value="wheat">Wheat</option>
+                            <option value="soybeans">Soybeans</option>
+                        </select>
+                    </div>
+                    <div class="form-group" for="soil-type">
+                        <label for="soil-type">Soil Type</label>
+                        <select required name="soil-type" id="soil-type">
+                            <option required value="" disabled selected>Select your option</option>
+                            <option value="sandy">Sandy</option>
+                            <option value="alluvium">Alluvium</option>
+                            <option value="laterite">Laterite</option>
+                        </select>
+                    </div>
+                    <div class="form-group" for="soil-type">
+                        <label for="season">Season</label>
+                        <select required name="season" id="season">
+                            <option value="" disabled selected>Select your option</option>
+                            <option value="spring">Spring</option>
+                            <option value="summer">Summer</option>
+                            <option value="fall">Fall</option>
+                        </select>
+                    </div>
+                    <button class="button button--flex footer__button">
+                        Get Recommendations
+                        <i class="ri-arrow-right-up-line button__icon"></i>
+                    </button>
+                </form>
+                <style>
+                    .form-group select {
+                        transition: all 0.5s ease-in-out;
+                    }
+                
+                    .form-group select:hover {
+                        transform: scale(1.1);
+                    }
+                
+                    .form-group select:hover::after {
+                        content: "";
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                        width: 0;
+                        height: 0;
+                        border-style: solid;
+                        border-width: 0 0 10px 10px;
+                        border-color: transparent transparent blue blue;
+                        border-radius: 50%;
+                        animation: opacity-change 1s linear infinite;
+                    }
+                
+                    @keyframes opacity-change {
+                        0% {
+                            opacity: 0;
+                        }
+                        100% {
+                            opacity: 1;
+                        }
+                    }
+                
+                    .form-group.active select {
+                        transform: scale(1);
+                    }
+                
+                    .form-group.active select::after {
+                        animation: none;
+                    }
+                
+                    .form-group.active ~ .form-group select {
+                        display: none;
+                    }
+                
+                    .form-group.current-crop.active ~ .form-group.soil-type {
+                        transform: translate(0, 50px);
+                    }
+                
+                    .form-group.current-crop.active ~ .form-group.soil-type ~ .form-group.season {
+                        transform: translate(0, 100px);
+                    }
+                
+                    .form-group.current-crop.active ~ .form-group.soil-type ~ .form-group.season select {
+                        display: block;
+                    }
+                
+                    .form-group.current-crop.active ~ .form-group.soil-type ~ .form-group.season select:hover {
+                        transform: scale(1.1);
+                    }
+                
+                    .form-group.current-crop.active ~ .form-group.soil-type ~ .form-group.season select:hover::after {
+                        content: "";
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                        width: 0;
+                        height: 0;
+                        border-style: solid;
+                        border-width: 0 0 10px 10px;
+                        border-color: transparent transparent blue blue;
+                        border-radius: 50%;
+                        animation: opacity-change 1s linear infinite;
+                    }
+                
+                    .form-group.current-crop.active ~ .form-group.soil-type ~ .form-group.season.active select {
+                        transform: scale(1);
+                    }
+                
+                    .form-group.current-crop.active ~ .form-group.soil-type ~ .form-group.season.active select::after {
+                        animation: none;
+                    }
+                </style>
+</section><br><br>
+
+            <!--==================== QUESTIONS ====================-->
+            <section class="questions section" id="faqs">
+                <h2 class="section__title-center questions__title container">
+                    Some common questions <br> were often asked
+                </h2>
+
+                <div class="questions__container container grid">
+                    <div class="questions__group">
+                        <div class="questions__item">
+                            <header class="questions__header">
+                                <i class="ri-add-line questions__icon"></i>
+                                <h3 class="questions__item-title">
+                                    My flowers are falling off or dying?
+                                </h3>
+                            </header>
+
+                            <div class="questions__content">
+                                <p class="questions__description">
+                                    Plants are easy way to add color energy and transform your 
+                                    space but which planet is for you. Choosing the right plant.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="questions__item">
+                            <header class="questions__header">
+                                <i class="ri-add-line questions__icon"></i>
+                                <h3 class="questions__item-title">
+                                    What causes leaves to become pale?
+                                </h3>
+                            </header>
+
+                            <div class="questions__content">
+                                <p class="questions__description">
+                                    Plants are easy way to add color energy and transform your 
+                                    space but which planet is for you. Choosing the right plant.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="questions__item">
+                            <header class="questions__header">
+                                <i class="ri-add-line questions__icon"></i>
+                                <h3 class="questions__item-title">
+                                    What causes brown crispy leaves?
+                                </h3>
+                            </header>
+
+                            <div class="questions__content">
+                                <p class="questions__description">
+                                    Plants are easy way to add color energy and transform your 
+                                    space but which planet is for you. Choosing the right plant.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="questions__group">
+                        <div class="questions__item">
+                            <header class="questions__header">
+                                <i class="ri-add-line questions__icon"></i>
+                                <h3 class="questions__item-title">
+                                    How do i choose a plant?
+                                </h3>
+                            </header>
+
+                            <div class="questions__content">
+                                <p class="questions__description">
+                                    Plants are easy way to add color energy and transform your 
+                                    space but which planet is for you. Choosing the right plant.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="questions__item">
+                            <header class="questions__header">
+                                <i class="ri-add-line questions__icon"></i>
+                                <h3 class="questions__item-title">
+                                    How do I change the pots?
+                                </h3>
+                            </header>
+
+                            <div class="questions__content">
+                                <p class="questions__description">
+                                    Plants are easy way to add color energy and transform your 
+                                    space but which planet is for you. Choosing the right plant.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="questions__item">
+                            <header class="questions__header">
+                                <i class="ri-add-line questions__icon"></i>
+                                <h3 class="questions__item-title">
+                                    Why are gnats flying around my plant?
+                                </h3>
+                            </header>
+
+                            <div class="questions__content">
+                                <p class="questions__description">
+                                    Plants are easy way to add color energy and transform your 
+                                    space but which planet is for you. Choosing the right plant.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!--==================== Login ====================-->
+            <section class="login section" id="login">
+                <h2 class="section__title-center">
+                    Enhance Your Experience:<br> Log in or Sign Up and Track Your Search Activity
+                </h2>
+            <div class="login1">
+                <div class="login__content">
+                    <div class="login__img">
+                        <img src="login.svg" alt="">
+                    </div>
+    
+                    <div class="login__forms">
+                        <form action="" class="login__registre" id="login-in">
+                            <h1 class="login__title">Sign In</h1>
+        
+                            <div class="login__box">
+                                <i class='bx bx-user login__icon'></i>
+                                <input type="text" placeholder="Username" class="login__input">
+                            </div>
+        
+                            <div class="login__box">
+                                <i class='bx bx-lock-alt login__icon'></i>
+                                <input type="password" placeholder="Password" class="login__input">
+                            </div>
+    
+                            <a href="#" class="login__forgot">Forgot password?</a>
+    
+                            <a href="#" class="login__button">Sign In</a>
+    
+                            <div>
+                                <span class="login__account">Don't have an Account ?</span>
+                                <span class="login__signin" id="sign-up">Sign Up</span>
+                            </div>
+                        </form>
+    
+                        <form action="" class="login__create none" id="login-up">
+                            <h1 class="login__title">Create Account</h1>
+        
+                            <div class="login__box">
+                                <i class='bx bx-user login__icon'></i>
+                                <input type="text" placeholder="Username" class="login__input">
+                            </div>
+        
+                            <div class="login__box">
+                                <i class='bx bx-at login__icon'></i>
+                                <input type="text" placeholder="Email" class="login__input">
+                            </div>
+    
+                            <div class="login__box">
+                                <i class='bx bx-lock-alt login__icon'></i>
+                                <input type="password" placeholder="Password" class="login__input">
+                            </div>
+    
+                            <a href="#" class="login__button">Sign Up</a>
+    
+                            <div>
+                                <span class="login__account">Already have an Account ?</span>
+                                <span class="login__signup" id="sign-in">Sign In</span>
+                            </div>
+                        </section><br><br>
+
+
+
+            <!--==================== CONTACT ====================-->
+            <section class="contact section container" id="contact">                
+                <div class="contact__container grid">
+                    <div class="contact__box">
+                        <h2 class="section__title">
+                            Reach out to us today <br> via any of the given <br> information
+                        </h2>
+
+                        <div class="contact__data">
+                            <div class="contact__information">
+                                <h3 class="contact__subtitle"><br>Call us for instant support</h3>
+                                <span class="contact__description">
+                                    <i class="ri-phone-line contact__icon"></i>
+                                    +919953733780
+                                </span>
+                            </div>
+
+                            <div class="contact__information">
+                                <h3 class="contact__subtitle">Write us by mail</h3>
+                                <span class="contact__description">
+                                    <i class="ri-mail-line contact__icon"></i>
+                                    user@email.com
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <form action="" class="contact__form">
+                        <div class="contact__inputs">
+                            <div class="contact__content">
+                                <input type="email" placeholder=" " class="contact__input">
+                                <label for="" class="contact__label">Email</label>
+                            </div>
+
+                            <div class="contact__content">
+                                <input type="text" placeholder=" " class="contact__input">
+                                <label for="" class="contact__label">Subject</label>
+                            </div>
+
+                            <div class="contact__content contact__area">
+                                <textarea name="message" placeholder=" " class="contact__input"></textarea>                              
+                                <label for="" class="contact__label">Message</label>
+                            </div>
+                        </div>
+
+                        <button class="button button--flex">
+                            Send Message
+                            <i class="ri-arrow-right-up-line button__icon"></i>
+                        </button>
+                    </form>
+                </div>
+            </section>
+        </main>
+
+        <!--==================== FOOTER ====================-->
+        <footer class="footer section">
+            <div class="footer__container container grid">
+                <div class="footer__content">
+                    <a href="#" class="footer__logo">
+                        <i class="ri-leaf-line footer__logo-icon"></i> C r o p i o
+                    </a>
+
+                    <h3 class="footer__title">
+                        Subscribe to our newsletter <br> to stay update
+                    </h3>
+
+                    <div class="footer__subscribe">
+                        <input type="email" placeholder="Enter your email" class="footer__input">
+
+                        <button class="button button--flex footer__button">
+                            Subscribe
+                            <i class="ri-arrow-right-up-line button__icon"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="footer__content">
+                    <h3 class="footer__title">Our Address</h3>
+
+                    <ul class="footer__data">
+                        <li class="footer__information">Patia  - Bhubaneshwar</li>
+                        <li class="footer__information">KIIT UNIVERSITY</li>
+                        <li class="footer__information">751024</li>
+                    </ul>
+                </div>
+
+                <div class="footer__content">
+                    <h3 class="footer__title">Contact Us</h3>
+
+                    <ul class="footer__data">
+                        <li class="footer__information">+919953733780</li>
+                        
+                        <div class="footer__social">
+                            <a href="https://www.facebook.com/" class="footer__social-link">
+                                <i class="ri-facebook-fill"></i>
+                            </a>
+                            <a href="https://www.instagram.com/" class="footer__social-link">
+                                <i class="ri-instagram-line"></i>
+                            </a>
+                            <a href="https://twitter.com/" class="footer__social-link">
+                                <i class="ri-twitter-fill"></i>
+                            </a>
+                        </div>
+                    </ul>
+                </div>
+
+                <div class="footer__content">
+
+                    <div class="footer__cards">
+                        <img src="assets/img/card1.png" alt="" class="footer__card">
+                        <img src="assets/img/card2.png" alt="" class="footer__card">
+                        <img src="assets/img/card3.png" alt="" class="footer__card">
+                        <img src="assets/img/card4.png" alt="" class="footer__card">
+                    </div>
+                </div>
+            </div>
+
+            <p class="footer__copy">&#169; Cropio</p>
+        </footer>
+        
+        <!--=============== SCROLL UP ===============-->
+        <a href="#" class="scrollup" id="scroll-up"> 
+            <i class="ri-arrow-up-fill scrollup__icon"></i>
+        </a>
+
+        <!--=============== SCROLL REVEAL ===============-->
+        <script src="scrollreveal.min.js"></script>
+        
+        <!--=============== MAIN JS ===============-->
+        <script src="main.js"></script>
+    </body>
 </html>
