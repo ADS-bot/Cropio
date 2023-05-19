@@ -796,7 +796,17 @@ the website, in dark theme
       outline: 1px solid black;
     }
   }
-  
+  /*#noThanksButton {
+   position: absolute;
+   top: 0;
+   right: 0;
+   margin: 10px;
+   padding: 10px;
+   border: 1px solid black;
+   border-radius: 5px;
+   background-color: #fff;
+   color: #000;
+   cursor: pointer;*/
 /*=============== FOOTER ===============*/
 .footer__container{
   row-gap: 3rem;
@@ -1162,7 +1172,6 @@ img{
 .none{
   display: none;
 }
-
 /* ===== MEDIA QUERIES =====*/
 @media screen and (min-width: 576px){
   .login__forms{
