@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Cropio</title>
+<style>
+  .search-container {
+    position: relative;
+    display: inline-block;
+    font-family: Arial, sans-serif;
+  }
+
+  .search-input {
+    width: 300px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+
+  .dropdown {
+    position: absolute;
+    z-index: 1;
+    width: 300px;
+    max-height: 200px;
+    overflow-y: auto;
+    background-color: rgba(0, 255, 0, 0.295); /* Light green transparent background */
+    border: 1px solid #ccc;
+    border-top: none;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    display: none; /* Initially hide the dropdown */
+  }
+
+  .dropdown-item {
+    padding: 10px;
+    cursor: pointer;
+  }
+
+  .dropdown-item:hover {
+    background-color: #97d692;
+  }
+
+  .search-button {
+    padding: 10px 16px;
+    background-color: #4CAF50;
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+
+  .search-button:hover {
+    background-color: #45a049;
+  }
+
+  /* Show the dropdown when the search input is focused */
+  .search-input:focus + .dropdown {
+    display: block;
+  }
+</style>
+
+</head>
+<body>
+  <div class="search-container">
+    <input type="text" id="search-input" class="search-input" placeholder="Search...">
+    <div id="dropdown" class="dropdown"></div>
+    <button id="search-button" class="search-button">Search</button>
+  </div>
+
+  <script>
+    
+    var searchInput = document.getElementById('search-input');
+var dropdown = document.getElementById('dropdown');
+var searchButton = document.getElementById('search-button');
+var selectedOption = '';
+
+// Example list of options
+var options = ['Alluvium', 'laterite', 'loamy', 'sandy'];
+
+// Function to calculate the Levenshtein distance between two strings
+function levenshteinDistance(a, b) {
+  if (a.length === 0) return b.length;
+  if (b.length === 0) return a.length;
+
+  var matrix = [];
+
+  // Increment along the first column of each row
+  for (var i = 0; i <= b.length; i++) {
+    matrix[i] = [i];
+  }
+
+  // Increment each column in the first row
+  for (var j = 0; j <= a.length; j++) {
+    matrix[0][j] = j;
+  }
+
+  // Fill in the rest of the matrix
+  for (i = 1; i <= b.length; i++) {
+    for (j = 1; j <= a.length; j++) {
+      if (b.charAt(i - 1) === a.charAt(j - 1)) {
+        matrix[i][j] = matrix[i - 1][j - 1];
+      } else {
+        matrix[i][j] = Math.min(
+          matrix[i - 1][j - 1] + 1, // substitution
+          Math.min(
+            matrix[i][j - 1] + 1, // insertion
+            matrix[i - 1][j] + 1
+          )
+        ); // deletion
+      }
+    }
+  }
+
+  return matrix[b.length][a.length];
+}
+
+// Function to find the closest matching option
+function findClosestMatch(inputValue) {
+  var minDistance = Infinity;
+  var closestMatch = '';
+
+  options.forEach(function(option) {
+    var distance = levenshteinDistance(inputValue.toLowerCase(), option.toLowerCase());
+    if (distance < minDistance) {
+      minDistance = distance;
+      closestMatch = option;
+    }
+  });
+
+  return closestMatch;
+}
+
+// Function to filter options based on search input
+function filterOptions() {
+  var searchValue = searchInput.value.toLowerCase();
+  var filteredOptions = options.filter(function(option) {
+    return option.toLowerCase().includes(searchValue);
+  });
+
+  updateDropdown(filteredOptions);
+}
+
+// Function to update the dropdown with filtered options
+function updateDropdown(filteredOptions) {
+  dropdown.innerHTML = '';
+
+  filteredOptions.forEach(function(option) {
+    var dropdownItem = document.createElement('div');
+    dropdownItem.classList.add('dropdown-item');
+    dropdownItem.textContent = option;
+
+    dropdown.appendChild(dropdownItem);
+  });
+
+  dropdown.style.display = filteredOptions.length > 0 ? 'block' : 'none';
+}
+
+// Function to redirect to the page
+function redirectToPage(option) {
+  // Replace spaces with hyphens and convert to lowercase
+  var pageName = option.toLowerCase().replace(/\s+/g, '-');
+  // Redirect to the page
+  window.location.href = pageName + '.html';
+}
+
+searchInput.addEventListener('input', filterOptions);
+searchButton.addEventListener('click', function() {
+  var inputValue = searchInput.value.trim();
+  if (inputValue !== '') {
+    if (options.includes(inputValue)) {
+      redirectToPage(inputValue);
+    } else {
+      var closestMatch = findClosestMatch(inputValue);
+      var confirmation = confirm("Did you mean '" + closestMatch + "'?");
+      if (confirmation) {
+      redirectToPage(closestMatch);
+      } else {
+      searchInput.value = '';
+      selectedOption = '';
+      }
+      }
+      }
+      });
+      
+      searchInput.addEventListener('keydown', function(event) {
+      if (event.key === 'Enter') {
+      var inputValue = searchInput.value.trim();
+      if (inputValue !== '') {
+      if (options.includes(inputValue)) {
+      redirectToPage(inputValue);
+      } else {
+      var closestMatch = findClosestMatch(inputValue);
+      var confirmation = confirm("Did you mean '" + closestMatch + "'?");
+      if (confirmation) {
+      redirectToPage(closestMatch);
+      } else {
+      searchInput.value = '';
+      selectedOption = '';
+      }
+      }
+      }
+      }
+      });
+      
+      document.addEventListener('keydown', function(event) {
+      if (event.key === 'Enter' && selectedOption !== '') {
+      var inputValue = searchInput.value.trim();
+      if (inputValue !== '') {
+      if (options.some(option => option.toLowerCase() === inputValue.toLowerCase())) {
+      redirectToPage(inputValue);
+      } else {
+      var closestMatch = findClosestMatch(inputValue);
+      var confirmation = confirm("Did you mean '" + closestMatch + "'?");
+      if (confirmation) {
+      redirectToPage(closestMatch);
+      } else {
+      searchInput.value = '';
+      selectedOption = '';
+      }
+      }
+      }
+      }
+      });
+      
+      // Event listener for delegated click on dropdown items
+      dropdown.addEventListener('click', function(event) {
+      var target = event.target;
+      if (target.classList.contains('dropdown-item')) {
+      searchInput.value = target.textContent;
+      selectedOption = target.textContent;
+      dropdown.style.display = 'none';
+      }
+      });
+</script>
+</body>
+</html>

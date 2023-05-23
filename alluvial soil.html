@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+     <!--=============== FAVICON ===============-->
+     <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
+
+    <!--=============== REMIXICONS ===============-->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+
+    <!--=============== CSS ===============-->
+    <link rel="stylesheet" href="log.css">
+    <link rel="icon" href="leaf.jpg" type="image/x-icon">
+    <title>Cropio</title>
+<style>
+  body {
+    background-image: url("back1.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;   
+    font-feature-settings: "aalt";
+    color:#0f2916;
+    padding: 100px;
+      display: grid;
+      grid-template-columns: 3fr 1fr; /* Divide body into three-fourths and one-fourth */
+      grid-template-rows: 1fr; /* Single row */
+      grid-gap: 20px;
+     }
+     /* Adjustments for smaller screens */
+     @media screen and (min-width: 768px){
+         :root{
+           --normal-font-size: 1rem;
+           --small-font-size: .875rem;
+         }
+     }
+         @media screen and (max-width: 767px) {
+             .header {
+               position: fixed;
+               left: 0;
+               transition: .4s; /* For animation dark mode */
+             }
+            
+     }
+       
+       @media screen and (max-width: 767px){
+         .nav__menu{
+           position: fixed;
+           background-color: var(--container-color);
+           width: 80%;
+           height: 100%;
+           top: 0;
+           right: -100%;
+           box-shadow: -2px 0 4px hsla(var(--hue), 24%, 15%, .1);
+           padding: 4rem 0 0 3rem;
+           border-radius: 1rem 0 0 1rem;
+           transition: .3s;
+           z-index: var(--z-fixed);
+         }
+       }
+       .top-right-image {
+        grid-column: 3 / 3; /* Position the image in the second column */
+        grid-row: 1 / 2; /* Position the image in the first row */
+        max-width: 400%;
+        height: auto;
+        max-height: 400px;
+        
+          border: 5px solid #000000; /* Green border */
+          border-radius: 10px; /* Rounded corners */
+         /* Adjust the image height as desired */
+      }
+      
+      .text-content {
+        grid-column: 1 / 2; /* Position the text content in the first column */
+        grid-row: 1 / 2; /* Position the text content in the first row */
+        
+      }
+      .text-content2 {
+        grid-column:1/span 4; /* Position the text content in the first column */
+        grid-row: 2 / 2; /* Position the text content in the first row */
+        
+      }
+      .footer {
+        background-color: #3333338d;
+        color: #fff;
+        padding: 20px;
+        text-align: center;
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+      .button {
+        display: inline-block;
+        padding: 8px 16px;
+        background-color: #4CAF50;
+        color: white;
+        text-decoration: none;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+  
+      .button:hover {
+        background-color: #45a049;
+      }
+      .footer p {
+        margin: 0;
+      }
+      
+    </style>
+    </head>
+    
+<body>
+  <header class="header" id="header">
+    <nav class="nav container">
+        <a href="log.html" class="nav__logo">
+            <i class="ri-leaf-line nav__logo-icon"></i> C r o p i o
+        </a>
+        <ul class="nav__menu">
+            <a href="index.html" class="button">Home</a></li>
+        </ul>
+    </nav>
+</header>
+  <div class="text-content">
+      
+  
+    <h1 style="color:black">Alluvial Soil</h1>
+
+  
+  <p>Alluvial soil is a type of soil that is formed by the deposition of sediments carried by rivers and streams. It is known for its fertility and is widely used in agriculture.</p>
+<br>
+  <h2>Types of Alluvial Soil</h2>
+  <p>There are various types of alluvial soil found across different geographical regions. Some examples include:</p>
+  <ul>
+    <li>Ganges alluvial soil</li>
+    <li>Mississippi alluvial soil</li>
+    <li>Nile alluvial soil</li>
+  </ul>
+<br>
+  <h2>Plants Supported by Alluvial Soil</h2>
+  <p>Alluvial soil is highly fertile and supports a wide range of plant species, including:</p>
+  <ul>
+    <li>Crops: rice, wheat, maize</li>
+    <li>Trees: mango, coconut, banyan</li>
+    <li>Flowers: marigold, sunflower, rose</li>
+  </ul>
+</div><div class="text-content2">
+  <h2>Agricultural Practices</h2>
+  <p>To make the most of alluvial soil, farmers employ several agricultural practices, including:</p>
+  <ul>
+    <li>Proper land preparation through plowing and leveling</li>
+    <li>Selection of suitable crop varieties</li>
+    <li>Implementing proper irrigation techniques</li>
+    <li>Applying appropriate fertilizers and nutrients based on soil testing</li>
+    <li>Implementing crop rotation to maintain soil fertility</li>
+  </ul>
+<br>
+  <h2>Challenges and Management</h2>
+  <p>Alluvial soil is not without its challenges. Some of the common challenges faced in managing alluvial soil include:</p>
+    <li>Soil erosion due to heavy rain or improper land management practices</li>
+    <li>Waterlogging in areas with poor drainage</li>
+    <li>Degradation of soil fertility over time</li>
+  <p>To manage these challenges, farmers can employ various techniques, such as:</p>
+  <ul>
+    <li>Implementing erosion control measures like contour plowing and terracing</li>
+    <li>Installing proper drainage systems to address waterlogging</li>
+    <li>Practicing sustainable farming methods, such as crop rotation and cover cropping</li>
+    <li>Adopting soil conservation practices like mulching and windbreaks</li>
+  </ul>
+</div>
+<img src="alluvial.jpg" alt="Black Cotton Soil Image 1" class="top-right-image">
+</body>
+</html>
