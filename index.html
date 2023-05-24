@@ -89,7 +89,7 @@
 
                     <div class="home__data">
                         <h1 class="home__title">
-                            Plants will make <br> your life better
+                            Crop Your Way : <br> To Success
                         </h1>
                         <p class="home__description">
                             Recommends suitable crops based on current crop, soil type, and season for optimal yield.
@@ -301,7 +301,7 @@
                   
                   
             
-                <form id="personal-form" style="display: none;">
+                  <form id="personal-form" style="display: none;">
                     <div class="form-group">
                         <label for="current-crop">Current Crop</label>
                         <select required name="current-crop" id="current-crop">
@@ -309,7 +309,7 @@
                             <option value="corn">Corn</option>
                             <option value="wheat">Wheat</option>
                             <option value="soybeans">Soybeans</option>
-                            <option value="rice">rice</option>
+                            <option value="rice">Rice</option>
                             <option value="mustard">Mustard</option>
                         </select>
                     </div>
@@ -432,52 +432,191 @@
           sandy: {
             spring: 'Soybeans',
             summer: 'Wheat',
-            fall: 'Winter Wheat'
+            fall: 'Winter Wheat',
+            rainy:'rice'
           },
           alluvium: {
             spring: 'Soybeans',
             summer: 'Wheat',
-            fall: 'Winter Wheat'
+            fall: 'Winter Wheat',
+            rainy:'rice'
           },
           laterite: {
             spring: 'Soybeans',
             summer: 'Wheat',
-            fall: 'Winter Wheat'
+            fall: 'Winter Wheat',
+            rainy:'rice'
+          },
+          red:{
+            spring: 'Soybeans',
+            summer: 'Wheat',
+            fall: 'Winter Wheat',
+            rainy:'rice'
+          },
+          black:{
+            spring: 'Soybeans',
+            summer: 'Wheat',
+            fall: 'Winter Wheat',
+            rainy:'rice'
+          },
+          mountain:{
+            spring: 'Soybeans',
+            summer: 'Wheat',
+            fall: 'Winter Wheat',
+            rainy:'rice'
           }
         },
         wheat: {
           sandy: {
             spring: 'Corn',
             summer: 'Soybeans',
-            fall: 'Winter Wheat'
+            fall: 'Winter Wheat',
+            rainy:'mustard'
           },
           alluvium: {
             spring: 'Corn',
             summer: 'Soybeans',
-            fall: 'Winter Wheat'
+            fall: 'Winter Wheat',
+            rainy:'mustard'
           },
           laterite: {
             spring: 'Corn',
             summer: 'Soybeans',
-            fall: 'Winter Wheat'
+            fall: 'Winter Wheat',
+            rainy:'mustard'
+          },
+          red:{
+            spring: 'Corn',
+            summer: 'Soybeans',
+            fall: 'Winter Wheat',
+            rainy:'mustard'
+          },
+          black:{
+            spring: 'Corn',
+            summer: 'Soybeans',
+            fall: 'Winter Wheat',
+            rainy:'mustard'
+          },
+          mountain:{
+            spring: 'Corn',
+            summer: 'Soybeans',
+            fall: 'Winter Wheat',
+            rainy:'mustard'
           }
         },
         soybeans: {
           sandy: {
             spring: 'Wheat',
             summer: 'Corn',
-            fall: 'Winter Wheat'
+            fall: 'Winter Wheat',
+            rainy:'rice'
           },
           alluvium: {
             spring: 'Wheat',
             summer: 'Corn',
-            fall: 'Winter Wheat'
+            fall: 'Winter Wheat',
+            rainy:'rice'
           },
           laterite: {
             spring: 'Wheat',
             summer: 'Corn',
-            fall: 'Winter Wheat'
+            fall: 'Winter Wheat',
+            rainy:'rice'
+          },
+          red:{
+            spring: 'Wheat',
+            summer: 'Corn',
+            fall: 'Winter Wheat',
+            rainy:'rice'
+          },
+          black:{
+            spring: 'Wheat',
+            summer: 'Corn',
+            fall: 'Winter Wheat',
+            rainy:'rice'
+          },
+          mountain:{
+            spring: 'Wheat',
+            summer: 'Corn',
+            fall: 'Winter Wheat',
+            rainy:'rice'
           }
+        },
+        rice: {
+            sandy:{
+                spring: 'Wheat',
+                summer: 'Corn',
+                fall: 'Winter Wheat',
+                rainy:'mustard'
+            },
+            alluvium:{
+                spring: 'Wheat',
+                summer: 'Corn',
+                fall: 'Winter Wheat',
+                rainy:'mustard'
+            },
+            laterite:{
+                spring: 'Wheat',
+                summer: 'Corn',
+                fall: 'Winter Wheat',
+                rainy:'mustard'
+            },
+            red:{
+                spring: 'Wheat',
+                summer: 'Corn',
+                fall: 'Winter Wheat',
+                rainy:'mustard'
+            },
+            black:{
+                spring: 'Wheat',
+                summer: 'Corn',
+                fall: 'Winter Wheat',
+                rainy:'mustard'
+            },
+            mountain:{
+                spring: 'Wheat',
+                summer: 'Corn',
+                fall: 'Winter Wheat',
+                rainy:'mustard'
+            }
+        },
+        mustard: {
+            sandy:{
+                spring: 'Corn',
+                summer: 'Soybeans',
+                fall: 'Winter Wheat',
+                rainy:'rice'
+            },
+            alluvium:{
+                spring: 'Corn',
+                summer: 'Soybeans',
+                fall: 'Winter Wheat',
+                rainy:'rice'
+            },
+            laterite:{
+                spring: 'Corn',
+                summer: 'Soybeans',
+                fall: 'Winter Wheat',
+                rainy:'rice'
+            },
+            red:{
+                spring: 'Corn',
+                summer: 'Soybeans',
+                fall: 'Winter Wheat',
+                rainy:'rice'
+            },
+            black:{
+                spring: 'Corn',
+                summer: 'Soybeans',
+                fall: 'Winter Wheat',
+                rainy:'rice'
+            },
+            mountain:{
+                spring: 'Corn',
+                summer: 'Soybeans',
+                fall: 'Winter Wheat',
+                rainy:'rice'
+            }
         }
       };
       
@@ -676,25 +815,24 @@
                         </div>
                     </div>
 
-                    <form action="" class="contact__form">
+                    <form class="contact__form" method="post" action="process.php">
                         <div class="contact__inputs">
                             <div class="contact__content">
-                                <input type="email" placeholder=" " class="contact__input">
-                                <label for="" class="contact__label">Email</label>
+                                <input type="email" placeholder=" " class="contact__input" id="email" name="email">
+                                <label for="" class="contact__label"><strong>Email</strong></label>
                             </div>
 
                             <div class="contact__content">
-                                <input type="text" placeholder=" " class="contact__input">
-                                <label for="" class="contact__label">Subject</label>
+                                <input type="text" placeholder=" " class="contact__input" id="subject" name="subject">
+                                <label for="" class="contact__label"><strong>Subject</strong></label>
                             </div>
 
                             <div class="contact__content contact__area">
-                                <textarea name="message" placeholder=" " class="contact__input"></textarea>                              
-                                <label for="" class="contact__label">Message</label>
+                                <textarea name="message" placeholder=" " class="contact__input" id="message" name="message"></textarea>                              
+                                <label for="" class="contact__label"><strong>Message</strong></label>
                             </div>
                         </div>
-
-                        <button class="button button--flex">
+                        <button class="button button--flex" type="submit" name="submit" value="submit">
                             Send Message
                             <i class="ri-arrow-right-up-line button__icon"></i>
                         </button>
