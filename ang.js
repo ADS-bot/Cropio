@@ -1,5 +1,7 @@
 function calculate() {
-    const crop = document.getElementById("crop").value;
+    // const crop = document.getElementById("crop").value;
+    const urlParams = new URLSearchParams(window.location.search);
+	const crop = urlParams.get('origin');
     let landSize = parseFloat(document.getElementById("land-size").value);
     let measurementType = document.getElementById("measurement-type").value;
     let totalCost, profit;
@@ -15,7 +17,7 @@ function calculate() {
     if (crop === 'Wheat') {
         totalCost = 12210 * landSize;
         profit = 15390 * landSize;
-    } else if (crop === 'Soyabean') {
+    } else if (crop === 'Soybeans') {
         totalCost = 1476 * 81.97 * landSize;
         profit = 20979 * landSize;
     } else if (crop === 'Corn') {
@@ -24,7 +26,14 @@ function calculate() {
     } else if (crop === 'Winter Wheat') {
         totalCost = 151.20 * 81.97 * landSize;
         profit = 173.80 * 81.97 * landSize;
-    } else {
+    } else if(crop=='Rice'){
+        totalCost=27940*landSize;
+        profit=50975*landSize;
+    } else if(crop=='Mustard'){
+        totalCost=9493*landSize;
+        profit=22707*landSize;
+    }
+    else {
         totalCost = 0;
         profit = 0;
     }
