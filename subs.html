@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+     <!--=============== FAVICON ===============-->
+     <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
+
+    <!--=============== REMIXICONS ===============-->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+
+    
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="leaf.jpg" type="image/x-icon">
+    <title>Cropio</title>
+
+    <style>        
+        body {
+            background-image: url("back1.jpg");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;   
+            font-feature-settings: "aalt";
+            color:#0f2916;
+            padding: 100px;
+              display: grid;
+               /* Single row */
+              grid-gap: 20px;
+             }
+             /* Adjustments for smaller screens */
+             @media screen and (min-width: 768px){
+                 :root{
+                   --normal-font-size: 1rem;
+                   --small-font-size: .875rem;
+                 }
+             }
+                 @media screen and (max-width: 767px) {
+                     .header {
+                       position: fixed;
+                       left: 0;
+                       transition: .4s; /* For animation dark mode */
+                     }
+                    
+             }
+               
+               @media screen and (max-width: 767px){
+                 .nav__menu{
+                   position: fixed;
+                   background-color: var(--container-color);
+                   width: 80%;
+                   height: 100%;
+                   top: 0;
+                   right: -100%;
+                   box-shadow: -2px 0 4px hsla(var(--hue), 24%, 15%, .1);
+                   padding: 4rem 0 0 3rem;
+                   border-radius: 1rem 0 0 1rem;
+                   transition: .3s;
+                   z-index: var(--z-fixed);
+                 }
+               }
+               .top-right-image {
+                grid-column: 3 / 3; /* Position the image in the second column */
+                grid-row: 1 / 2; /* Position the image in the first row */
+                max-width: 400%;
+                height: auto;
+                max-height: 400px;
+                
+                  border: 5px solid #000000; /* Green border */
+                  border-radius: 10px; /* Rounded corners */
+                 /* Adjust the image height as desired */
+              }
+              
+              .text-content {
+                grid-column: 1 / 2; /* Position the text content in the first column */
+                grid-row: 1 / 2; /* Position the text content in the first row */
+                
+              }
+              .text-content2 {
+                grid-column:1/span 4; /* Position the text content in the first column */
+                grid-row: 2 / 2; /* Position the text content in the first row */
+                
+              }
+              
+              a {
+                color: inherit;
+                text-decoration: none;
+              }
+              .button {
+                display: inline-block;
+                padding: 8px 16px;
+                background-color: #4CAF50;
+                color: white;
+                text-decoration: none;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+                transition: background-color 0.3s;
+              }
+          
+              .button:hover {
+                background-color: #45a049;
+              }
+              .footer p {
+                margin: 0;
+              }
+              
+        
+        .disclaimer {
+            margin-top: 20px;
+            margin-left: 40px;
+        }
+        
+        .disclaimer a {
+            color: #0f2916;
+            font-weight: bold;
+        }
+        .disclaimer {
+            text-align: center;
+            background-color: rgba(17, 196, 17, 0.432);
+            padding: 20px 50px;
+            margin: 20px 0;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+          }
+          
+          .disclaimer p {
+            flex-basis: 100%;
+            text-align: justify;
+            margin: 0;
+          }
+        
+    
+        /* Animations */
+  .logo,
+  nav a {
+    animation: fade-in 1s ease-out;
+  }
+  
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  .container {
+    animation: slide-in 1s ease-out;
+  }
+  
+  @keyframes slide-in {
+    from {
+      transform: translateX(-100px);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
+  .column {
+    animation: fade-up 0.5s ease-out;
+  }
+  
+  @keyframes fade-up {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform:
+      translateY(0);
+    }
+    }
+    .animate-up {
+        opacity: 0;
+        animation: fade-up 0.5s ease-in-out;
+        animation-fill-mode: forwards;
+        }
+        @keyframes bounce-in {
+            0% {
+              opacity: 0;
+              transform: translateY(-500px) scale(0.5);
+            }
+            60% {
+              opacity: 1;
+              transform: translateY(0) scale(1.2);
+            }
+            80% {
+              transform: translateY(0) scale(0.9);
+            }
+            100% {
+              transform: translateY(0) scale(1);
+            }
+        }
+        select {
+            width: 100%;
+            height: 40px;
+            padding: 10px;
+            font-size: 16px;
+            font-weight: lighter;
+            border-radius: 5px;
+            border: 1px solid #ccc; 
+            background-color: rgba(0, 0, 0, 0.1);
+            color: #333;
+            margin-bottom: 20px;
+            
+          }
+          
+          select option {
+            font-size: 16px;
+            font-weight: lighter;
+            background-color: rgba(0, 0, 0, 0.1);
+            color: #333; 
+          }
+          
+          
+          .container {
+            text-align: center;
+        }
+          
+          label {
+            display: block;
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            text-align: left;
+            width: 100%;
+          }
+          
+          label[for="land_size"] {
+            text-align: right;
+          }
+          
+          input[type="number"] {
+            padding: 0.8rem;
+            border: 1px solid #ccc;
+            border-radius: 0.5rem;
+            width: 100%;
+            margin-bottom: 1.5rem;
+            font-size: 1.2rem;
+            transition: border-color 0.2s ease-in-out;
+            background-color: rgba(0, 0, 0, 0.1);
+          }
+          
+          input[type="number"]:focus {
+            outline: none;
+            border-color: #4CAF50;
+          }
+          
+          button {
+            padding: 1rem 2rem;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            font-size: 1.2rem;
+            transition: background-color 0.2s ease-in-out;
+            
+          }
+          
+          button[type="submit"]:hover {
+            background-color: #048509;
+          }
+          
+          input[readonly] {
+            
+            cursor: not-allowed;
+            background-color: rgba(0, 0, 0, 0.3);
+          }
+          .header {
+            background-color: rgba(0, 0, 0, 0);
+          }
+          button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+          }
+          
+          button:hover {
+            background-color: #048509;
+          }
+          
+          button:focus {
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(33, 150, 243, 0.5);
+          }
+          
+          button:active {
+            background-color: #0D47A1;
+          }
+          #calcForm {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+          }
+        
+          #calcForm .container {
+            background-color: transparent;
+          }
+          #calcForm .container select {
+            transition: all 0.5s ease-in-out;
+          }
+        
+          #calcForm .container select:hover {
+            transform: scale(1.1);
+          }
+        
+          #calcForm .container select:hover::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 0 0 10px 10px;
+            border-color: transparent transparent blue blue;
+            border-radius: 50%;
+            animation: opacity-change 1s linear infinite;
+          }
+        
+          @keyframes opacity-change {
+            0% {
+              opacity: 0;
+            }
+            100% {
+              opacity: 1;
+            }
+          }
+        
+          #calcForm .container .form-group.active select {
+            transform: scale(1);
+          }
+        
+          #calcForm .container .form-group.active select::after {
+            animation: none;
+          }
+        
+          #calcForm .container .form-group.active ~ .form-group select {
+            display: none;
+          }
+        
+          #calcForm .container .form-group.current-crop.active ~ .form-group.soil-type {
+            transform: translate(0, 50px);
+          }
+        
+          #calcForm .container .form-group.current-crop.active ~ .form-group.soil-type ~ .form-group.season {
+            transform: translate(0, 100px);
+          }
+        
+          #calcForm .container .form-group.current-crop.active ~ .form-group.soil-type ~ .form-group.season select {
+            display: block;
+          }
+        
+          #calcForm .container .form-group.current-crop.active ~ .form-group.soil-type ~ .form-group.season select:hover {
+            transform: scale(1.1);
+          }
+        
+          #calcForm .container .form-group.current-crop.active ~ .form-group.soil-type ~ .form-group.season select:hover::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 0 0 10px 10px;
+            border-color: transparent transparent blue blue;
+            border-radius: 50%;
+            animation: opacity-change 1s linear infinite;
+          }
+        
+          #calcForm .container .form-group.current-crop.active ~ .form-group.soil-type ~ .form-group.season.active select {
+            transform: scale(1);
+          }
+        
+          #calcForm .container .form-group.current-crop.active ~ .form-group.soil-type ~ .form-group.season.active select::after {
+            animation: none;
+          }
+          .textbox {
+            background-color: rgba(255, 255, 255, 0.7);
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            max-width: 600px; /* Adjust the width as per your preference */
+            width: 100%;
+            margin-left: 22%;
+        }
+    </style>
+</head>
+<body>
+    <header class="header" id="header">
+    <nav class="nav container">
+        <a href="index.html" class="nav__logo">
+            <i class="ri-leaf-line nav__logo-icon"></i> C r o p i o
+        </a>
+        <ul class="nav__menu">
+            <!-- <a href="index.html" class="button">Login</a></li> -->
+            <a href="index.html" class="button">Home</a>
+        </ul>
+    </nav>
+</header><br>
+<div class="textbox">
+    <h1>Thank you for Subscribing</h1>
+  </div>
+</body>
+</html>
