@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!--=============== REMIX ICONS ===============-->
+        <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+
+        <!--=============== CSS ===============-->
+        <link rel="stylesheet" href="styles.css">
+        <link rel="icon" href="leaf.jpg" type="image/x-icon">
+        <title>Cropio</title>
+    </head>
+    <body>
+        <style>
+            body {
+               background-image: url("back1.jpg");
+               background-size: cover;
+               background-position: center;
+               background-repeat: no-repeat;
+                background-attachment: fixed;
+                }
+               .header{
+                backdrop-filter: blur(-100px); /* Adjust the blur intensity as needed */
+                background-color: rgba(255, 255, 255, 0.8);
+               }
+               .questions.section {
+                background-color: rgba(255, 255, 255, 0.5); /* Adjust the alpha value (0.5) to control the transparency */
+            }
+            
+                
+         </style>
+        <!--==================== HEADER ====================-->
+        <header class="header" id="header">
+            <nav class="nav container">
+                <a href="#" class="nav__logo">
+                    <i class="ri-leaf-line nav__logo-icon"></i> C r o p i o
+                </a>
+
+                <div class="nav__menu" id="nav-menu">
+                    <ul class="nav__list">
+                        <li class="nav__item">
+                            <a href="#home" class="nav__link active-link">Home</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="#about" class="nav__link">About</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="#rotations" class="nav__link">Rotations</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="#soils" class="nav__link">Soils</a>
+                        </li>
+                       
+                        <li class="nav__item">
+                            <a href="#contact" class="nav__link">Contact Us</a>
+                        </li>
+                    </ul>
+
+                    <div class="nav__close" id="nav-close">
+                        <i class="ri-close-line"></i>
+                    </div>
+                </div>
+
+                <div class="nav__btns">
+                    <!-- Theme change button -->
+                    <i class="ri-moon-line change-theme" id="theme-button"></i>
+                    <script>
+                        const toggleButton = document.querySelector('.change-theme');
+                        const body = document.body;
+                    
+                        toggleButton.addEventListener('click', () => {
+                          body.classList.toggle('dark-theme');
+                        });
+                      </script>
+                    <div class="nav__toggle" id="nav-toggle">
+                        <i class="ri-menu-line"></i>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <main class="main">
+            <!--==================== HOME ====================-->
+            <section class="home" id="home">
+                <div class="home__container container grid">
+                    <img src="assets/img/home.png" alt="" class="home__img">
+
+                    <div class="home__data">
+                        <h1 class="home__title">
+                            Plants will make <br> your life better
+                        </h1>
+                        <p class="home__description">
+                            Recommends suitable crops based on current crop, soil type, and season for optimal yield.
+                        </p>
+                        <a href="#about" class="button button--flex">
+                            Explore <i class="ri-arrow-right-down-line button__icon"></i>
+                        </a>
+                    </div>
+
+                    <div class="home__social">
+                        <span class="home__social-follow">Follow Us</span>
+
+                        <div class="home__social-links">
+                            <a href="https://www.facebook.com/" target="_blank" class="home__social-link">
+                                <i class="ri-facebook-fill"></i>
+                            </a>
+                            <a href="https://www.instagram.com/" target="_blank" class="home__social-link">
+                                <i class="ri-instagram-line"></i>
+                            </a>
+                            <a href="https://twitter.com/" target="_blank" class="home__social-link">
+                                <i class="ri-twitter-fill"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!--==================== ABOUT ====================-->
+            <section class="about section container" id="about">
+                <div class="about__container grid">
+                    <img src="about.png" alt="" class="about__img">
+
+                    <div class="about__data">
+                        <h2 class="section__title about__title">
+                            Who we really are & <br> why choose us
+                        </h2>
+
+                        <p class="about__description">
+                            We are Cropio, an expert agricultural advisor. Choose us for data-driven crop recommendations and optimized yield strategies.
+                        </p>
+
+                        <div class="about__details">
+                            <p class="about__details-description">
+                                <i class="ri-checkbox-fill about__details-icon"></i>
+                                Accurate Crop Recommendations.
+                            </p>
+                            <p class="about__details-description">
+                                <i class="ri-checkbox-fill about__details-icon"></i>
+                                Increased Profitability.
+                            </p>
+                            <p class="about__details-description">
+                                <i class="ri-checkbox-fill about__details-icon"></i>
+                                Steps for Customized Solutions.
+                            </p>
+                            <p class="about__details-description">
+                                <i class="ri-checkbox-fill about__details-icon"></i>
+                                Sustainability and Soil Health.
+                            </p>
+                        </div>
+
+                        <a href="#rotations" class="button--link button--flex">
+                            Recommendations Now <i class="ri-arrow-right-down-line button__icon"></i>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!--==================== STEPS ====================-->
+            <section class="steps section container">
+                <div class="steps__bg">
+                    <h2 class="section__title-center steps__title">
+                        Steps to start your <br> plants off right
+                    </h2>
+
+                    <div class="steps__container grid">
+                        <div class="steps__card">
+                            <div class="steps__card-number">01</div>
+                            <h3 class="steps__card-title">Input Information</h3>
+                            <p class="steps__card-description">
+                                We have several varieties plants you can choose from.  Users provide details such as current crop, soil type, and season through a user-friendly form.
+                            </p>
+                        </div>
+
+                        <div class="steps__card">
+                            <div class="steps__card-number">02</div>
+                            <h3 class="steps__card-title">Data Analysis</h3>
+                            <p class="steps__card-description">
+                                Cropio utilizes a comprehensive database and algorithms to analyze the input data and determine the optimal crop rotation pattern and Steps.
+                            </p>
+                        </div>
+
+                        <div class="steps__card">
+                            <div class="steps__card-number">03</div>
+                            <h3 class="steps__card-title">Get Recommendations</h3>
+                            <p class="steps__card-description">
+                                Cropio provides in-depth guidance on planting techniques, growing conditions, fertilization, pest management, disease control, and harvest methods for successful crop cultivation and higher yields.
+                            </p>
+                        </div>
+                        <a href="https://oil-father-12e.notion.site/CROPIO-ee41babc51474f818df3b3e969fbf2e2" style="margin-left: 10px;">Know More...</a>
+                    </div>
+                </div>
+            </section>
+
+            <!--==================== rotationS ====================-->
+            <section class="rotation section container" id="rotations">
+                <h2 class="section__title-center">
+                    Know about the Next Crop
+                </h2><br>
+                <div class="container">
+                    <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
+                        <div class="login-button-container clearfix">
+                            <div class="col-xs-6 sign-in">
+                                <button class="btn sign-in__button" onclick="showPersonalForm()">
+                                    Commercial
+                                </button>
+                            </div>
+                            <div class="col-xs-6 register">
+                                <button class="btn register__button" onclick="showCommercialForm()">
+                                    Personal
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+                <script>
+                    function showPersonalForm() {
+                        $('#commercial-form').hide();
+                        $('#personal-form').fadeIn(1000);
+                    }
+                    
+                    function showCommercialForm() {
+                        $('#personal-form').hide();
+                        $('#commercial-form').fadeIn(1000);
+                    }
+                    
+                    $(document).ready(function() {
+                        $('.form-group select').fadeIn(1000);
+                    });
+                </script>
+            
+                <form id="commercial-form" style="display: none;">
+                    <div class="form-group">
+                      <label for="Plant">Plant</label>
+                      <select required name="Plant" id="Plant" onchange="showSubOptions()">
+                        <option value="" disabled selected>Select your option</option>
+                        <option value="Flowers">Flowers</option>
+                        <option value="Edible Plants">Edible Plants</option>
+                      </select>
+                    </div>
+                  
+                    <div id="flora-options" style="display: none;">
+                      <div class="form-group">
+                        <label for="Flowers">Flowers</label>
+                        <select required name="Flowers" id="Flowers">
+                          <option value="" disabled selected>Select your option</option>
+                          <option value="Rose">Rose</option>
+                          <option value="Sunflower">Sunflower</option>
+                        </select>
+                      </div>
+                    </div>
+                  
+                    <div id="fauna-options" style="display: none;">
+                      <div class="form-group">
+                        <label for="HerbsVegetables">Herbs/Vegetables</label>
+                        <select required name="HerbsVegetables" id="HerbsVegetables">
+                          <option value="" disabled selected>Select your option</option>
+                          <option value="Tomato">Tomato</option>
+                          <option value="Carrot">Carrot</option>
+                        </select>
+                      </div>
+                    </div>
+                    <button class="button button--flex footer__button" type="submit" onclick="redirectToPage()">
+                      Get Recommendations
+                      <i class="ri-arrow-right-up-line button__icon"></i>
+                    </button>
+                  </form>
+                  
+                  <script>
+                    function showSubOptions() {
+                      var plantSelect = document.getElementById("Plant");
+                      var floraOptions = document.getElementById("flora-options");
+                      var faunaOptions = document.getElementById("fauna-options");
+                  
+                      floraOptions.style.display = (plantSelect.value === "Flowers") ? "block" : "none";
+                      faunaOptions.style.display = (plantSelect.value === "Edible Plants") ? "block" : "none";
+                    }
+                  
+                    function redirectToPage() {
+                      var plantSelect = document.getElementById("Plant").value;
+                      var flowerSelect = document.getElementById("Flowers").value;
+                      var herbsVegetablesSelect = document.getElementById("HerbsVegetables").value;
+                  
+                      if (plantSelect === "Flowers" && flowerSelect !== "") {
+                        if (flowerSelect === "Rose") {
+                          window.location.href = "rose.html";
+                        } else if (flowerSelect === "Sunflower") {
+                          window.location.href = "sunflower.html";
+                        }
+                      } else if (plantSelect === "Edible Plants" && herbsVegetablesSelect !== "") {
+                        if (herbsVegetablesSelect === "Tomato") {
+                          window.location.href = "tomato.html";
+                        } else if (herbsVegetablesSelect === "Carrot") {
+                          window.location.href = "carrot.html";
+                        }
+                      }
+                    }
+                  </script>
+                  
+                  
+            
+                <form id="personal-form" style="display: none;">
+                    <div class="form-group">
+                        <label for="current-crop">Current Crop</label>
+                        <select required name="current-crop" id="current-crop">
+                            <option value="" disabled selected>Select your option</option>
+                            <option value="corn">Corn</option>
+                            <option value="wheat">Wheat</option>
+                            <option value="soybeans">Soybeans</option>
+                        </select>
+                    </div>
+                    <div class="form-group" for="soil-type">
+                        <label for="soil-type">Soil Type</label>
+                        <select required name="soil-type" id="soil-type">
+                            <option required value="" disabled selected>Select your option</option>
+                            <option value="sandy">Sandy</option>
+                            <option value="alluvium">Alluvium</option>
+                            <option value="laterite">Laterite</option>
+                        </select>
+                    </div>
+                    <div class="form-group" for="soil-type">
+                        <label for="season">Season</label>
+                        <select required name="season" id="season">
+                            <option value="" disabled selected>Select your option</option>
+                            <option value="spring">Spring</option>
+                            <option value="summer">Summer</option>
+                            <option value="fall">Fall</option>
+                        </select>
+                    </div>
+                    <button class="button button--flex footer__button" type="submit">
+                        Get Recommendations
+                        <i class="ri-arrow-right-up-line button__icon"></i>
+                    </button>
+                </form>
+                <style>
+                    .form-group select {
+                        transition: all 0.5s ease-in-out;
+                    }
+                
+                    .form-group select:hover {
+                        transform: scale(1.1);
+                    }
+                
+                    .form-group select:hover::after {
+                        content: "";
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                        width: 0;
+                        height: 0;
+                        border-style: solid;
+                        border-width: 0 0 10px 10px;
+                        border-color: transparent transparent blue blue;
+                        border-radius: 50%;
+                        animation: opacity-change 1s linear infinite;
+                    }
+                
+                    @keyframes opacity-change {
+                        0% {
+                            opacity: 0;
+                        }
+                        100% {
+                            opacity: 1;
+                        }
+                    }
+                
+                    .form-group.active select {
+                        transform: scale(1);
+                    }
+                
+                    .form-group.active select::after {
+                        animation: none;
+                    }
+                
+                    .form-group.active ~ .form-group select {
+                        display: none;
+                    }
+                
+                    .form-group.current-crop.active ~ .form-group.soil-type {
+                        transform: translate(0, 50px);
+                    }
+                
+                    .form-group.current-crop.active ~ .form-group.soil-type ~ .form-group.season {
+                        transform: translate(0, 100px);
+                    }
+                
+                    .form-group.current-crop.active ~ .form-group.soil-type ~ .form-group.season select {
+                        display: block;
+                    }
+                
+                    .form-group.current-crop.active ~ .form-group.soil-type ~ .form-group.season select:hover {
+                        transform: scale(1.1);
+                    }
+                
+                    .form-group.current-crop.active ~ .form-group.soil-type ~ .form-group.season select:hover::after {
+                        content: "";
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                        width: 0;
+                        height: 0;
+                        border-style: solid;
+                        border-width: 0 0 10px 10px;
+                        border-color: transparent transparent blue blue;
+                        border-radius: 50%;
+                        animation: opacity-change 1s linear infinite;
+                    }
+                
+                    .form-group.current-crop.active ~ .form-group.soil-type ~ .form-group.season.active select {
+                        transform: scale(1);
+                    }
+                
+                    .form-group.current-crop.active ~ .form-group.soil-type ~ .form-group.season.active select::after {
+                        animation: none;
+                    }
+                </style>
+               
+</section> <script>
+    /*crop*/
+    const cropRotationPatterns = {
+        corn: {
+          sandy: {
+            spring: 'Soybeans',
+            summer: 'Wheat',
+            fall: 'Winter Wheat'
+          },
+          alluvium: {
+            spring: 'Soybeans',
+            summer: 'Wheat',
+            fall: 'Winter Wheat'
+          },
+          laterite: {
+            spring: 'Soybeans',
+            summer: 'Wheat',
+            fall: 'Winter Wheat'
+          }
+        },
+        wheat: {
+          sandy: {
+            spring: 'Corn',
+            summer: 'Soybeans',
+            fall: 'Winter Wheat'
+          },
+          alluvium: {
+            spring: 'Corn',
+            summer: 'Soybeans',
+            fall: 'Winter Wheat'
+          },
+          laterite: {
+            spring: 'Corn',
+            summer: 'Soybeans',
+            fall: 'Winter Wheat'
+          }
+        },
+        soybeans: {
+          sandy: {
+            spring: 'Wheat',
+            summer: 'Corn',
+            fall: 'Winter Wheat'
+          },
+          alluvium: {
+            spring: 'Wheat',
+            summer: 'Corn',
+            fall: 'Winter Wheat'
+          },
+          laterite: {
+            spring: 'Wheat',
+            summer: 'Corn',
+            fall: 'Winter Wheat'
+          }
+        }
+      };
+      
+      const form = document.getElementById('personal-form');
+      
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+      
+        const currentCrop = document.getElementById('current-crop').value;
+        const soilType = document.getElementById('soil-type').value;
+        const season = document.getElementById('season').value;
+      
+        const recommendedCrop = cropRotationPatterns[currentCrop][soilType][season];
+      
+        window.location.href = `${recommendedCrop}.html`;
+      });
+      
+      const points = [
+        "Find the most suitable crops to grow depending on your present crops and soil conditions.",
+        "Consider the current crops on your land when selecting new crops to plant.",
+        "To make educated judgments, investigate local climatic patterns and undertake soil testing.",
+        "Agricultural data from the past was used to provide significant insights and recommendations."
+      ];
+      let i = 0;
+      let j = 0;
+      
+      function typing() {
+        const text = points[j];
+        if (i < text.length) {
+          document.getElementById("text").innerHTML += text.charAt(i);
+          i++;
+          setTimeout(typing, 30);
+        } else {
+          setTimeout(erase, 2000);
+        }
+      }
+      
+      function erase() {
+        if (i > 0) {
+          const text = points[j];
+          document.getElementById("text").innerHTML = text.substring(0, i - 1);
+          i--;
+          setTimeout(erase, 1);
+        } else {
+          j++;
+          if (j >= points.length) {
+            j = 0;
+          }
+          setTimeout(typing, 1000);
+        }
+      }
+      
+      typing();
+      // Added functionality for the new form
+
+
+
+</script><br><br>
+
+            <!--==================== QUESTIONS ====================-->
+            <section class="questions section" id="soils">
+                <h2 class="section__title-center questions__title container">
+                    Know More <br> About your Soil
+                </h2><br>
+
+                <div class="questions__container container grid">
+                    <div class="questions__group">
+                        <div class="questions__item">
+                            <header class="questions__header">
+                                <i class="ri-add-line questions__icon"></i>
+                                <h3 class="questions__item-title">
+                                   Black Soil
+                                </h3>
+                            </header>
+
+                            <div class="questions__content">
+                                <p class="questions__description">
+                                    Black Soils are mineral soils which have a black surface horizon, enriched with organic carbon that is at least 25 cm deep.
+                                    <a href="black-cotton soil.html"> Know More..</a>
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="questions__item">
+                            <header class="questions__header">
+                                <i class="ri-add-line questions__icon"></i>
+                                <h3 class="questions__item-title">
+                                    Alluvial Soil
+                                </h3>
+                            </header>
+
+                            <div class="questions__content">
+                                <p class="questions__description">
+                                    Alluvial Soil is one of the best soils, requiring the least water due to its high porosity. 
+                                    <a href="alluvial soil.html"> Know More..</a>
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="questions__item">
+                            <header class="questions__header">
+                                <i class="ri-add-line questions__icon"></i>
+                                <h3 class="questions__item-title">
+                                    Red Soil
+                                </h3>
+                            </header>
+
+                            <div class="questions__content">
+                                <p class="questions__description">
+                                    Red Soil is a type of soil that typically develops in warm, temperate, and humid climates and comprise approximately 13% of Earth's soils.
+                                    <a href="red.html"> Know More..</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="questions__group">
+                        <div class="questions__item">
+                            <header class="questions__header">
+                                <i class="ri-add-line questions__icon"></i>
+                                <h3 class="questions__item-title">
+                                    Laterite Soil
+                                </h3>
+                            </header>
+
+                            <div class="questions__content">
+                                <p class="questions__description">
+                                    Laterite soil layer that is rich in iron oxide and derived from a wide variety of rocks weathering under strongly oxidizing and leaching conditions. 
+                                    <a href="laterite.html"> Know More..</a>
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="questions__item">
+                            <header class="questions__header">
+                                <i class="ri-add-line questions__icon"></i>
+                                <h3 class="questions__item-title">
+                                    Desert Soil
+                                </h3>
+                            </header>
+
+                            <div class="questions__content">
+                                <p class="questions__description">
+                                    Desert Soil is mostly sandy soil (90-95%) found in low-rainfall regions. It has a low content of nitrogen and organic matter with very high calcium carbonate.
+                                    <a href="desert.html"> Know More..</a>
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="questions__item">
+                            <header class="questions__header">
+                                <i class="ri-add-line questions__icon"></i>
+                                <h3 class="questions__item-title">
+                                   Mountain Soil
+                                </h3>
+                            </header>
+
+                            <div class="questions__content">
+                                <p class="questions__description">
+                                    Forest and Mountain soils occur not only at higher elevations, but also at lower elevations that have sufficient rainfall. 
+                                    <a href="mountain.html"> Know More..</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!--==================== Login ====================-->
+           
+
+
+            <!--==================== CONTACT ====================-->
+            <section class="contact section container" id="contact">                
+                <div class="contact__container grid">
+                    <div class="contact__box">
+                        <h2 class="section__title">
+                            Reach out to us today <br> via any of the given <br> information
+                        </h2>
+
+                        <div class="contact__data">
+                            <div class="contact__information">
+                                <h3 class="contact__subtitle"><br>Call us for instant support</h3>
+                                <span class="contact__description">
+                                    <i class="ri-phone-line contact__icon"></i>
+                                    +919953733780
+                                </span>
+                            </div>
+
+                            <div class="contact__information">
+                                <h3 class="contact__subtitle">Write us by mail</h3>
+                                <span class="contact__description">
+                                    <i class="ri-mail-line contact__icon"></i>
+                                    user@email.com
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <form class="contact__form" method="post" action="process.php">
+                        <div class="contact__inputs">
+                            <div class="contact__content">
+                                <input type="email" placeholder=" " class="contact__input" id="email" name="email">
+                                <label for="" class="contact__label"><strong>Email</strong></label>
+                            </div>
+
+                            <div class="contact__content">
+                                <input type="text" placeholder=" " class="contact__input" id="subject" name="subject">
+                                <label for="" class="contact__label"><strong>Subject</strong></label>
+                            </div>
+
+                            <div class="contact__content contact__area">
+                                <textarea name="message" placeholder=" " class="contact__input" id="message" name="message"></textarea>                              
+                                <label for="" class="contact__label"><strong>Message</strong></label>
+                            </div>
+                        </div>
+                        <button class="button button--flex" type="submit" name="submit" value="submit">
+                            Send Message
+                            <i class="ri-arrow-right-up-line button__icon"></i>
+                        </button>
+                    </form>
+                </div>
+            </section>
+        </main>
+
+        <!--==================== FOOTER ====================-->
+        <footer class="footer section">
+            <div class="footer__container container grid">
+                <div class="footer__content">
+                    <a href="#" class="footer__logo">
+                        <i class="ri-leaf-line footer__logo-icon"></i> C r o p i o
+                    </a>
+
+                    <h3 class="footer__title">
+                        Subscribe to our newsletter <br> to stay update
+                    </h3>
+
+                    <div class="footer__subscribe">
+                        <input type="email" placeholder="Enter your email" class="footer__input">
+
+                        <button class="button button--flex footer__button">
+                            Subscribe
+                            <i class="ri-arrow-right-up-line button__icon"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="footer__content">
+                    <h3 class="footer__title">Our Address</h3>
+
+                    <ul class="footer__data">
+                        <li class="footer__information">Patia  - Bhubaneshwar</li>
+                        <li class="footer__information">KIIT UNIVERSITY</li>
+                        <li class="footer__information">751024</li>
+                    </ul>
+                </div>
+
+                <div class="footer__content">
+                    <h3 class="footer__title">Contact Us</h3>
+
+                    <ul class="footer__data">
+                        <li class="footer__information">+919953733780</li>
+                        
+                        <div class="footer__social">
+                            <a href="https://www.facebook.com/" class="footer__social-link">
+                                <i class="ri-facebook-fill"></i>
+                            </a>
+                            <a href="https://www.instagram.com/" class="footer__social-link">
+                                <i class="ri-instagram-line"></i>
+                            </a>
+                            <a href="https://twitter.com/" class="footer__social-link">
+                                <i class="ri-twitter-fill"></i>
+                            </a>
+                        </div>
+                    </ul>
+                </div>
+
+                <div class="footer__content">
+
+                    <div class="footer__cards">
+                        <img src="assets/img/card1.png" alt="" class="footer__card">
+                        <img src="assets/img/card2.png" alt="" class="footer__card">
+                        <img src="assets/img/card3.png" alt="" class="footer__card">
+                        <img src="assets/img/card4.png" alt="" class="footer__card">
+                    </div>
+                </div>
+            </div>
+
+            <p class="footer__copy"><b>&#169; Cropio</b></p>
+        </footer>
+        
+        <!--=============== SCROLL UP ===============-->
+        <a href="#" class="scrollup" id="scroll-up"> 
+            <i class="ri-arrow-up-fill scrollup__icon"></i>
+        </a>
+
+        <!--=============== SCROLL REVEAL ===============-->
+        <script src="scrollreveal.min.js"></script>
+        
+        <!--=============== MAIN JS ===============-->
+        <script src="main.js"></script>
+    </body>
+</html>
