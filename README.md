@@ -16,6 +16,6 @@ Our crop rotation recommender can help farmers to:
 - Increase crop yields
 - Save money on farming costs
 
-  **Conclusion**
+**Conclusion**
 
 We believe that our crop rotation recommender can be a valuable tool for farmers who are looking to improve the sustainability of their operations. By helping farmers to select crops that are compatible with their current crops and soil conditions, we can help to reduce soil depletion, improve soil health, and increase crop yields.
